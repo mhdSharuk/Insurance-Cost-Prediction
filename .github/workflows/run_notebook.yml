@@ -2,8 +2,8 @@ name: Run Notebook and Save Model
 
 on:
   push:
-    paths:
-      - 'notebooks/Insurance_Cost_Prediction.ipynb'
+    branches:
+      - main  
 
 jobs:
   run-notebook:
@@ -25,6 +25,8 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
+          pip install ipykernel
+          python -m ipykernel install --user --name=python3 --display-name "Python 3"
 
       - name: Create tmp folder
         run: mkdir -p ./notebooks/tmp
