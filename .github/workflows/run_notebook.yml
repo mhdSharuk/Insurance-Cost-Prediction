@@ -41,4 +41,5 @@ jobs:
           git config --local user.name "GitHub Action"
           git add ./models/*.pkl
           git commit -m "Update best model" || echo "No changes to commit"
-          git push
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+
