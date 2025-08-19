@@ -1,0 +1,39 @@
+name: Run Notebook and Save Model
+
+on:
+  push:
+    paths:
+      - 'notebooks/Insurance_Cost_Prediction.ipynb'
+
+jobs:
+  run-notebook:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requrirements.txt
+
+      - name: Create tmp folder
+        run: mkdir -p ./notebooks/tmp
+
+      - name: Run Notebook
+        run: |
+          papermill ./notebooks/Insurance_Cost_Prediction.ipynb ./notebooks/tmp/out.ipynb
+
+      - name: Commit Trained Model
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add ./models/*.pkl
+          git commit -m "Update best model" || echo "No changes to commit"
+          git push
