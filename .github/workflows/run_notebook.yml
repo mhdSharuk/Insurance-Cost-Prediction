@@ -21,7 +21,7 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install --upgrade pip
-          pip install -r requrirements.txt
+          pip install -r requirements.txt
 
       - name: Create tmp folder
         run: mkdir -p ./notebooks/tmp
