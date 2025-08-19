@@ -1,15 +1,9 @@
 import streamlit as st
-import numpy as np
-from model_utils import load_model
-from preprocessing import process_input
-from config import pd
+from src.model_utils import load_model
+from src.preprocessing import process_input
 
-# Load model
 model = load_model()
 
-# ========================
-# Streamlit UI
-# ========================
 st.set_page_config(
     page_title='Insurance Cost Prediction',
     layout='wide',

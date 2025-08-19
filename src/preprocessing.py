@@ -1,6 +1,6 @@
 import pandas as pd
+from src.features import create_features
 from sklearn.preprocessing import StandardScaler, OrdinalEncoder
-from features import create_features
 
 def handle_feature_scaling(df, numeric_cols):
     scaler = StandardScaler()
