@@ -67,12 +67,15 @@ During cross-validation, the following performance metrics were observed for the
 
 As shown in the table above, the **RMSE (Root Mean Squared Error)** was a key metric for evaluating our models, as it provides a measure of the average magnitude of the errors in the same units as the target variable. Here's a summary of the results:
 
-*   **Linear Regression:** RMSE = 3542.13, MAE = 2419.16, R² = 0.678
-*   **Decision Tree Regressor:** RMSE = 3889.32, MAE = 1147.06, R² = 0.612
-*   **Random Forest Regressor:** RMSE = **2858.16**, MAE = 1249.14, R² = 0.791 (Best performing model in terms of RMSE)
-*   **Gradient Boosting Regressor:** RMSE = 3109.07, MAE = 1724.89, R² = 0.752
-*   **XGBoost Regressor:** RMSE = 3039.57, MAE = 1509.54, R² = 0.763
+| Model | RMSE | MAE | R² |
+|-------|------|-----|-----|
+| **Linear Regression** | 3542.13 | 2419.16 | 0.678 |
+| **Decision Tree Regressor** | 3889.32 | 1147.06 | 0.612 |
+| **Random Forest Regressor** | **2858.16** | 1249.14 | **0.791** |
+| **Gradient Boosting Regressor** | 3109.07 | 1724.89 | 0.752 |
+| **XGBoost Regressor** | 3039.57 | 1509.54 | 0.763 |
 
+**Best performing model:** Random Forest Regressor with RMSE = **2858.16** and R² = **0.791**
 The **Random Forest Regressor** demonstrated superior performance with the lowest RMSE of **2858.16**, indicating its strong capability in accurately predicting insurance costs and minimizing prediction errors. This model is the most reliable tool for practical application based on these metrics.
 
 ## Deployment
