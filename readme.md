@@ -74,3 +74,153 @@ As shown in the table above, the **RMSE (Root Mean Squared Error)** was a key me
 *   **XGBoost Regressor:** RMSE = 3039.57, MAE = 1509.54, R² = 0.763
 
 The **Random Forest Regressor** demonstrated superior performance with the lowest RMSE of **2858.16**, indicating its strong capability in accurately predicting insurance costs and minimizing prediction errors. This model is the most reliable tool for practical application based on these metrics.
+
+## Deployment
+
+To make our insurance cost prediction model accessible and user-friendly, we developed a web-based application using **Streamlit**. This application allows users to input their health and demographic data and receive an estimated insurance premium in real-time.
+
+### Project Structure for Deployment
+
+The project repository is structured to facilitate easy deployment and understanding:
+
+*   **`app.py`:** This is the main Streamlit application file. It handles the user interface, collects inputs, and proceeds with the prediction process.
+*   **`src/`:** This directory contains all the necessary backend components, including the trained machine learning model, data preprocessing scripts, and any other utility functions required by `app.py`.
+
+### Project Structure for Deployment
+
+The project repository is structured to facilitate easy deployment and understanding:
+
+```
+Insurance-Cost-Prediction/
+│
+├── app.py                              # Main Streamlit application file
+├── requirements.txt                    # Python dependencies
+├── README.md                           # Project documentation
+├── Dockerfile
+├── .gitignore
+├── tableau/
+    ├── insurance_cost_prediction_tableau_workbook.twb
+├── src/
+    ├── __init__.py
+    ├── config.py
+    ├── features.py
+    ├── model_utils.py
+    ├── preprocessing.py
+├── notebooks/
+    ├── Insurance_Cost_Prediction.ipynb
+├── models/
+    
+```
+
+### Key Components
+
+#### **`app.py`**
+This is the main Streamlit application file that handles:
+- User interface design and layout
+- Input collection from users (age, height, weight, health conditions, etc.)
+- Data validation and preprocessing
+- Model prediction calls
+- Results visualization and display
+
+#### **`src/` Directory**
+Contains all backend components:
+- **`model/`**: Stores the trained Random Forest model (`trained_model.pkl`)
+- **`preprocessing/`**: Contains the fitted scaler and feature engineering functions
+- **`utils/`**: Utility functions for prediction and data validation
+- **`config/`**: Configuration files and constants
+
+### Deployment Steps
+
+#### 1. **Local Development Setup**
+
+```bash
+# Clone the repository
+git clone https://github.com/mhdSharuk/Insurance-Cost-Prediction.git
+cd Insurance-Cost-Prediction
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the application locally
+streamlit run app.py
+```
+
+### Application Features
+
+#### **User Interface**
+- **Input Form**: Clean, intuitive form for entering personal and health information
+- **Real-time Validation**: Input validation with helpful error messages
+- **Interactive Visualization**: Charts showing risk factors and premium breakdown
+- **Responsive Design**: Mobile-friendly interface
+
+#### **Prediction Pipeline**
+1. **Data Collection**: User inputs collected through Streamlit widgets
+2. **Feature Engineering**: Automatic calculation of BMI, Health Score, and other engineered features
+3. **Preprocessing**: Data scaling using the trained StandardScaler
+4. **Prediction**: Random Forest model generates premium estimate
+5. **Results Display**: Premium amount with confidence intervals and risk factor analysis
+
+### Using the Application
+1. Enter your personal information (age, height, weight)
+2. Select your health conditions
+3. Specify the number of major surgeries
+4. Click "Predict Premium" to get your estimated insurance cost
+5. View detailed risk factor analysis and recommendations
+
+### Deployment Steps
+
+#### 1. **Local Development Setup**
+
+```bash
+# Clone the repository
+git clone https://github.com/mhdSharuk/Insurance-Cost-Prediction.git
+cd Insurance-Cost-Prediction
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the application locally
+streamlit run app.py
+```
+
+#### 2. **Docker Deployment**
+
+```bash
+# Build the Docker image
+docker build -t insurance-cost-prediction .
+
+# Run the container
+docker run -p 8501:8501 insurance-cost-prediction
+
+# Run container in background
+docker run -d -p 8501:8501 --name insurance-app insurance-cost-prediction
+
+# View running containers
+docker ps
+
+# Stop the container
+docker stop insurance-app
+
+# Remove the container
+docker rm insurance-app
+```
+
+## Contact
+
+**Mohammed Sharuk**
+- GitHub: [@mhdSharuk](https://github.com/mhdSharuk)
+- Email: [msharuk589@gmail.com](msharuk589@gmail.com)
+
+## Acknowledgments
+
+- Dataset source: [Include dataset source if applicable]
+- Inspired by real-world insurance industry challenges
+- Built with love for machine learning
