@@ -216,6 +216,12 @@ docker stop insurance-app
 docker rm insurance-app
 ```
 
+## Technical Blog
+[dev.to Insurance Cost Prediction](https://dev.to/mhdsharuk/insurance-cost-prediction-ai3)
+
+## Public Streamlit Application
+
+
 ## Contact
 
 **Mohammed Sharuk**
@@ -224,6 +230,6 @@ docker rm insurance-app
 
 ## Acknowledgments
 
-- Dataset source: [Include dataset source if applicable]
+- [Dataset source : From Scaler](https://drive.google.com/file/d/1NBk1TFkK4NeKdodR2DxIdBp2Mk1mh4AS/view?usp=drive_link) 
 - Inspired by real-world insurance industry challenges
 - Built with love for machine learning
