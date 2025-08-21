@@ -1,6 +1,8 @@
 import streamlit as st
-from src.model_utils import load_model
+from src.model_utils import load_model, load_preprocessing_model
 from src.preprocessing import process_input
+from src.custom_transformers import FeatureCreator, ImputerWrapper#, build_pipeline
+
 
 model = load_model()
 
@@ -69,7 +71,8 @@ if st.button("Calculate Premium", type="primary", use_container_width=True):
         age, height, weight, diabetes_val, bp_val, transplants_val, chronic_val,
         allergies_val, cancer_val, surgeries
     )
-    prediction = model.predict(processed_df)[0]
+    processed_df = load_preprocessing_model().transform(processed_df)
+    prediction = model.predict(processed_df[model.feature_names_in_])[0]
 
     st.success("Premium Calculated Successfully!")
     
