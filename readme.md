@@ -208,7 +208,7 @@ docker rm insurance-app
 
 **Mohammed Sharuk**
 - GitHub: [@mhdSharuk](https://github.com/mhdSharuk)
-- Email: [msharuk589@gmail.com](msharuk589@gmail.com)
+- Email: [msharuk589@gmail.com](mailto:msharuk589@gmail.com)
 
 ## Acknowledgments
 
