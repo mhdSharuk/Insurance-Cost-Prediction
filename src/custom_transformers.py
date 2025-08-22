@@ -43,7 +43,7 @@ class FeatureCreator(BaseEstimator, TransformerMixin):
         df = X.copy()
         df['bmi'] = np.round(df['weight'] / ((df['height'] / 100) ** 2), 2)
         bins = [17, 25, 35, 45, 55, 66, float('inf')]
-        labels = [1, 2, 3, 4, 5]
+        labels = [1, 2, 3, 4, 5, 6]
         df['age_group'] = pd.cut(df['age'], bins=bins, labels=labels).astype(int)
         df['health_score'] = df[self.binary_cols].sum(axis=1)
         df['age_health_surgery'] = np.round(df['age'] * df['health_score'] * df['number_of_major_surgeries'], 3)
