@@ -6,7 +6,7 @@ Insurance companies face the critical challenge of accurately predicting health 
 
 ## Target Metric
 
-The primary target metric for this regression problem is the **PremiumPrice**, which represents the health insurance cost in currency. Our goal is to minimize the prediction error for this continuous variable. The key evaluation metric used for model performance is **RMSE**, which measures the proportion of the variance in the dependent variable that is predictable from the independent variables. Additionally, **R-squared** and **Mean Absolute Error (MAE)** were considered to quantify prediction errors.
+The primary target metric for this regression problem is the **PremiumPrice**, representing the health insurance cost in currency. Our goal is to minimize the prediction error for this continuous variable. The key evaluation metric used for model performance is **RMSE**, which measures the average magnitude of prediction errors in the same units as the target variable. Additionally, **R-squared** and **Mean Absolute Error (MAE)** were considered to assess how well the model explains variance and the average prediction error, respectively.
 
 ## Steps Taken to Solve the Problem
 
