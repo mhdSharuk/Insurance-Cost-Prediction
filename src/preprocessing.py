@@ -1,5 +1,5 @@
 import pandas as pd
-from src.features import create_features
+# from src.features import create_features
 from sklearn.preprocessing import StandardScaler, OrdinalEncoder
 
 def process_input(
