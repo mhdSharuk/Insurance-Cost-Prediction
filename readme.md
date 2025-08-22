@@ -152,6 +152,28 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
+#### 2. **Docker Deployment**
+
+```bash
+# Build the Docker image
+docker build -t insurance-cost-prediction .
+
+# Run the container
+docker run -p 8501:8501 insurance-cost-prediction
+
+# Run container in background
+docker run -d -p 8501:8501 --name insurance-app insurance-cost-prediction
+
+# View running containers
+docker ps
+
+# Stop the container
+docker stop insurance-app
+
+# Remove the container
+docker rm insurance-app
+```
+
 ### Application Features
 
 #### **User Interface**
@@ -174,47 +196,6 @@ streamlit run app.py
 4. Click "Predict Premium" to get your estimated insurance cost
 5. View detailed risk factor analysis and recommendations
 
-### Deployment Steps
-
-#### 1. **Local Development Setup**
-
-```bash
-# Clone the repository
-git clone https://github.com/mhdSharuk/Insurance-Cost-Prediction.git
-cd Insurance-Cost-Prediction
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run the application locally
-streamlit run app.py
-```
-
-#### 2. **Docker Deployment**
-
-```bash
-# Build the Docker image
-docker build -t insurance-cost-prediction .
-
-# Run the container
-docker run -p 8501:8501 insurance-cost-prediction
-
-# Run container in background
-docker run -d -p 8501:8501 --name insurance-app insurance-cost-prediction
-
-# View running containers
-docker ps
-
-# Stop the container
-docker stop insurance-app
-
-# Remove the container
-docker rm insurance-app
-```
 
 ## Technical Blog
 [dev.to Insurance Cost Prediction](https://dev.to/mhdsharuk/insurance-cost-prediction-ai3)
